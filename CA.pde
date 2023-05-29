@@ -9,11 +9,11 @@ class CA{
      return ruleset_[0];
    else if(left == 0 && center == 0 && right == 1)
      return ruleset_[1];
-   else if(left == 0 && center == 0 && right == 0)
-     return ruleset_[2];
    else if(left == 0 && center == 1 && right == 0)
-     return ruleset_[3];
+     return ruleset_[2];
    else if(left == 0 && center == 1 && right == 1)
+     return ruleset_[3];
+   else if(left == 1 && center == 0 && right == 0)
      return ruleset_[4];
    else if(left == 1 && center == 0 && right == 1)
      return ruleset_[5];

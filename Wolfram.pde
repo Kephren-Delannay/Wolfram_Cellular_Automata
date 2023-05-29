@@ -5,7 +5,7 @@ int generation = 0;
 CA automaton;
 
 void setup(){
-  size(600, 600);
+  size(600, 300);
   background(0);
   numCells = width/CELLSIZE;
   cells = new int[numCells];
@@ -14,20 +14,14 @@ void setup(){
   cells[numCells/2] = 1;
   
   // arbitrary ruleset
-  int[] r = {1, 0, 0, 1, 0, 0, 0, 0};
+  int[] r = {0, 1, 1, 1, 1, 0, 0, 0};
   automaton = new CA(r);
-  
-  // test
-  for(int i = 0; i < 6; i++){
-    drawGeneration();
-    cells = automaton.nextGeneration(cells);
-    generation++;
-  }
-
 }
 
 void draw(){
-  
+   drawGeneration();
+   cells = automaton.nextGeneration(cells);
+   generation++;
 }
 
 void drawGeneration(){
