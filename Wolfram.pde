@@ -30,6 +30,8 @@ void draw(){
    //if(generation >= maxIteration){
    //  reset(); 
    //}
+   textSize(40);
+   text(rulesetToInt(automaton.ruleset_), 1000, 30); 
 }
 
 void drawGeneration(){
@@ -64,4 +66,12 @@ void reset(){
  int[] ruleset = randomRuleset();
  automaton.ruleset_ = ruleset;
  generation = 0;
+}
+
+int rulesetToInt(int [] r){
+  int result = 0;
+  for(int i = 0; i<8; i++){
+    result += r[7 - i] * pow(2, i);
+  }
+  return result;
 }
